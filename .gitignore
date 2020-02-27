@@ -1,2 +1,6 @@
 node_modules/**/*
 /lib
+/.idea/misc.xml
+/.idea/modules.xml
+/react-native-draggable-flatlist.iml
+/.idea/vcs.xml
