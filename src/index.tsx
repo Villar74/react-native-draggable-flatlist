@@ -877,9 +877,10 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
           ref={this.containerRef}
           onLayout={this.onContainerLayout}
         >
-          {listHeader}
           <AnimatedFlatList
             {...this.props}
+            ListHeaderComponent={listHeader}
+            ListFooterComponent={listFooter}
             CellRendererComponent={this.CellRendererComponent}
             ref={this.flatlistRef}
             onContentSizeChange={this.onListContentSizeChange}
@@ -912,7 +913,6 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
               ])
             }
           </Animated.Code>
-          {listFooter}
         </Animated.View>
       </PanGestureHandler>
     );
