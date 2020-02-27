@@ -856,7 +856,7 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
   }
 
   render() {
-    const { scrollEnabled, debug, horizontal, activationDistance } = this.props;
+    const { scrollEnabled, debug, horizontal, activationDistance, listHeader, listFooter } = this.props;
     const { hoverComponent } = this.state;
     let dynamicProps = {};
     if (activationDistance) {
@@ -872,6 +872,7 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
         onHandlerStateChange={this.onPanStateChange}
         {...dynamicProps}
       >
+        {listHeader}
         <Animated.View
           style={styles.flex}
           ref={this.containerRef}
@@ -912,6 +913,7 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
             }
           </Animated.Code>
         </Animated.View>
+        {listFooter}
       </PanGestureHandler>
     );
   }
