@@ -872,12 +872,12 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
         onHandlerStateChange={this.onPanStateChange}
         {...dynamicProps}
       >
-        {listHeader}
         <Animated.View
           style={styles.flex}
           ref={this.containerRef}
           onLayout={this.onContainerLayout}
         >
+          {listHeader}
           <AnimatedFlatList
             {...this.props}
             CellRendererComponent={this.CellRendererComponent}
@@ -912,8 +912,8 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
               ])
             }
           </Animated.Code>
+          {listFooter}
         </Animated.View>
-        {listFooter}
       </PanGestureHandler>
     );
   }
